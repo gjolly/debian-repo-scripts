@@ -6,7 +6,7 @@ release_index="$release_root/InRelease"
 temp_release="/tmp/tmp-release"
 new_release="/tmp/tmp-new-release"
 
-generate_index_line="$(readlink -f ./tools/generate_index_line.sh)"
+generate_index_line="$(readlink -f ./generate_index_line.sh)"
 
 function clean {
   rm -f "$temp_release" "$new_release"

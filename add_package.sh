@@ -54,4 +54,4 @@ cat "$tmp_info" >> "$tmp_pkg_index"
 gzip -c "$tmp_pkg_index" > "$packages_index"
 
 # update release index
-./tools/update_pocket_index.sh "$archive_root/dists/$release/"
+./update_pocket_index.sh "$archive_root/dists/$release/"

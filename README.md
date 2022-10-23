@@ -6,7 +6,7 @@ Set of script to manage a debian archive.
 
 Initialize the repo:
 ```
-mkdir -p root/ubuntu/dists/jammy
+mkdir -p $ROOT_PATH/dists/jammy
 
 cat << EOF > /tmp/jammy-header
 Origin: Ubuntu
@@ -20,13 +20,13 @@ Components: main restricted universe multiverse
 Description: Ubuntu Jammy 22.04
 EOF
 
-gpg --sign --clear -a --output root/ubuntu/dists/jammy/InRelease /tmp/jammy-header
+gpg --sign --clear -a --output $ROOT_PATH/dists/jammy/InRelease /tmp/jammy-header
 ```
 
 Then to add a new package to your archive:
 
 ```
-./tools/add_package.sh root/ubuntu/ PACKAGE.deb jammy
+./add_package.sh $ROOT_PATH $PACKAGE.deb jammy
 ```
 
 To serve it for testing, you can use python:
